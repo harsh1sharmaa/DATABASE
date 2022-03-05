@@ -42,31 +42,15 @@ session_start();
 
 <body class="text-center">
 
-
     <main class="form-signin">
-        <form action="./controlr.php" method="POST">
-            <h1 class="h3 mb-3 fw-normal">Ragistor</h1>
+        <div class="alert alert-danger" role="alert">
+           invalid User
+        </div>
 
-            <div class="form-floating">
-                <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">username</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" name="paswrd" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
-            <div class="form-floating">
-                <input type="email" name="email" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">email</label>
-            </div>
-            
-
-
-
-            <button class="w-100 btn btn-lg btn-primary" action="ragistor" type="submit">Ragistor</button>
-            <p class="mt-5 mb-3 text-muted">&copy; CEDCOSS Technologies</p>
-        </form>
     </main>
+
+
+
 </body>
 
 </html>

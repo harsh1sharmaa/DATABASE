@@ -18,6 +18,28 @@ $(document).ready(function(){
   
   });
 
+  $("#table-body").on("click", ".deletebtn", function (e) {
+    e.preventDefault();
+    let pid = $(this).data('pid');
+    let action = $(this).data('action');
+    console.log("add click")
+    console.log(pid);
+    console.log(action);
+    $.ajax({
+        method: "GET",
+        url: "controlr.php",
+        data: { id: pid, action: "actionForpermission",value:action },
+        //  dataType: "JSON"
+    }).done(function (data) {
+
+           console.log(data);
+       
+
+    });
+
+
+})
+
   function displayAllUser(data){
 let str=""
     for(let i=0;i<data.length;i++){
@@ -29,7 +51,7 @@ let str=""
         <td>"+obj.email+"</td>\
         <td>"+obj.role+"</td>\
         <td>"+obj.permission+"</td>\
-        <td>"+ "<a href=" + " # class=btn btn-success deletebtn  data-pid=" +obj.user_id + ">aprove</a><a href=" + " # class=btn btn-success deletebtn  data-pid=" +obj.user_id + ">restricted</a>"+"</td>\
+        <td>"+ "<a href=" + " # class='btn btn-success deletebtn' data-action=true  data-pid=" +obj.user_id + ">aprove</a><a href=" + " # class='btn btn-danger deletebtn' data-action=false data-pid=" +obj.user_id + ">restricted</a>"+"</td>\
         </tr>"    
 
     }

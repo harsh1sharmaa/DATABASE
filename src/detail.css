@@ -1,0 +1,62 @@
+
+.fa-star {
+    color: rgb(211, 173, 20);
+}
+
+.d-flex .m-2 {
+    color: rgb(165, 165, 165, .7);
+}
+
+.gray {
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+}
+
+.share {
+    background-color: grey;
+}
+
+#options .fa-solid {
+    color: rgb(35, 123, 206);
+}
+
+#footr {
+    background-color: rgb(5, 4, 7);
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    width: 100%;
+}
+
+#footr .fa-brands {
+    margin-left: 20px;
+}
+
+#footr .form-control {
+    /* margin-left: 20px;
+     */
+    background-color: black;
+}
+
+.input .fa-solid {
+    /* background-color: gray;
+     */
+    color: gray;
+}
+
+.privacy {
+    margin-top: 5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+}

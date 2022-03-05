@@ -1,3 +1,8 @@
+<?php
+
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,6 +14,7 @@
     <title>Dashboard Template · Bootstrap v5.1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     
 
@@ -57,7 +63,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.html">
+            <a class="nav-link active" aria-current="page" href="dashboard.php">
               <span data-feather="home"></span>
               Dashboard
             </a>
@@ -158,35 +164,24 @@
           <button type="submit" class="btn btn-primary">Search</button>
         </div>
         <div class="col-12">
-          <a class="btn btn-success" href="add-product.html">Add Product</a>
+          <a class="btn btn-success" href="AddnewProduct.php">Add Product</a>
         </div>
       </form>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <!-- <th scope="col">#</th> -->
               <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Price</th>
+              <th scope="col">category</th>
+              <th scope="col">Status</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td><a href="#">Edit</a>&nbsp;<a href="#">Delete</a></td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td><a href="#">Edit</a>&nbsp;<a href="#">Delete</a></td>
-            </tr>
+          <tbody id="table-body">
+           
           </tbody>
         </table>
         <nav aria-label="Page navigation example">
@@ -203,6 +198,8 @@
   </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="product.js"></script>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
