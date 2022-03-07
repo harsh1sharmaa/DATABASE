@@ -69,6 +69,42 @@ include_once('DB.php');
         
     }
 
+    public function getDetailsById($id){
+
+
+      $sql1 = "SELECT * FROM storeproduct WHERE Id='$id'" ;
+      $conn = DB::getInstance();
+
+      $stmt = $conn->prepare($sql1);
+      $stmt->execute();
+      $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+      $ans = $stmt->fetchAll();
+      //   echo"<pre>";
+      //   $id1=$ans[0]['user_id'];
+      // print_r($ans);
+      return $ans;
+
+        
+    }
+    public function getProductByCategory($category){
+
+
+      $sql1 = "SELECT * FROM storeproduct WHERE category='$category'" ;
+      $conn = DB::getInstance();
+
+      $stmt = $conn->prepare($sql1);
+      $stmt->execute();
+      $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+      $ans = $stmt->fetchAll();
+      //   echo"<pre>";
+      //   $id1=$ans[0]['user_id'];
+      // print_r($ans);
+      return $ans;
+
+        
+    }
+
+
 
   
 

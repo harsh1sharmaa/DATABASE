@@ -112,7 +112,7 @@ function displayAllProducts(data) {
         <td>"+ obj.product_price + "</td>\
         <td>"+ obj.category + "</td>\
         <td>"+ obj.status + "</td>\
-        <td>"+ "<a href=" + " # class='btn btn-success addbtn' data-action=add  data-pid=" + obj.product_id + ">ADD</a><a href=" + " # class='btn btn-danger deletebtn' data-action=false data-pid=" + obj.user_id + ">remove</a>" + "</td>\
+        <td>"+ "<a href=" + " # class='btn btn-success addbtn' data-action=add  data-pid=" + obj.product_id + ">ADD</a></td>\
         </tr>"
 
     }
