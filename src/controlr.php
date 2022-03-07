@@ -9,7 +9,20 @@ include_once('./classes/productclass.php');
 
 // if($_POST['action'])
 // print_r($_POST);
-switch ($_GET['action']) {
+// echo"<pre>";
+// print_r($_SESSION);
+// unset($_SESSION['AddToCart']);
+
+// foreach($_SESSION['AddToCart'] as $key=>$val){
+
+//     // if($val['id']==$id){
+//       echo  $_SESSION["AddToCart"][$key]['quantity'];
+//         // echo $val;
+       
+//     // }
+   
+// }
+switch ($_REQUEST['action']) {
 
     case 'getAllUser':
         $check = new Check();
@@ -46,6 +59,15 @@ switch ($_GET['action']) {
         die();
         break;
 
+    case 'getDetailsbyId':
+        $check = new Product();
+        $id = $_POST['id'];
+        $user = $check->getDetailsById($id);
+        echo json_encode($user);
+        die();
+        break;
+
+
 
 
     case 'addproduct':
@@ -65,6 +87,47 @@ switch ($_GET['action']) {
         $user = $check->getAllProduct();
         echo json_encode($user);
         die();
+        break;
+    case 'getproductbyId':
+        $check = new Product();
+        $category = $_GET['category'];
+        $user = $check->getProductByCategory($category);
+        echo json_encode($user);
+        die();
+        break;
+    case 'addToCart':
+        $id = $_GET['id'];
+        $name = $_GET['name'];
+        $price = $_GET['price'];
+        $quantity = $_GET['quantity'];
+        $product = array("id" => $id, "name" => $name, "price" => $price ,"quantity"=>$quantity);
+        if (!isset($_SESSION['AddToCart'])) {
+            $_SESSION['AddToCart'] = array();
+        }
+        
+        array_push($_SESSION['AddToCart'],$product);
+        die();
+        break;
+
+    case 'getCart':
+        echo json_encode($_SESSION['AddToCart']);
+        exit();
+       
+        break;
+    case 'updateQuantity':
+        $id=$_GET['id'];
+        $val=$_GET['qnty'];
+        updateQuentity($id,$val);
+        echo json_encode($_SESSION['AddToCart']);
+        exit();
+       
+        break;
+    case 'removeFromCart':
+        $id=$_GET['id'];
+        removeFromCart($id);
+        echo json_encode($_SESSION['AddToCart']);
+        exit();
+       
         break;
 }
 // if($_GET['action']=='getAllUser'){
@@ -116,6 +179,35 @@ if ($_POST['paswrd'] != '' && $_POST['email'] != '') {
     }
 } else {
     header("Location:login.php");
+}
+
+function updateQuentity($id,$qnty){
+
+    foreach($_SESSION['AddToCart'] as $key=>$val){
+
+        if($val['id']==$id){
+           $_SESSION["AddToCart"][$key]['quantity']=$qnty;
+            // echo $val
+            break;
+        }
+       
+    }
+
+
+}
+function removeFromCart($id){
+
+    foreach($_SESSION['AddToCart'] as $key=>$val){
+
+        if($val['id']==$id){
+        //    $_SESSION["AddToCart"][$key]['quantity']=$qnty;
+        //     // echo $val
+        //     break;
+        array_splice($_SESSION['AddToCart'],$key,1);
+        break;
+        }
+       
+    }
 }
 
 

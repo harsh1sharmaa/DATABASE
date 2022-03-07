@@ -49,52 +49,57 @@
 
     <div class="container">
 
-        <ul class="nav justify-content-center">
+
+        <ul class="nav justify-content-center" id="filter">
+           
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                <a class="nav-link" href="#">phone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">laptop</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="btn btn-danger" href="./cart.php" tabindex="-1" aria-disabled="true">Go To Cart</a>
             </li>
         </ul>
+        <label class="btn btn-primary">Category</label>
+        <input type="text" id="option">
+        <button id="filter" onclick="filter()">search</button>
+
 
 
         <div class="single-product-area">
+
             <div class="zigzag-bottom"></div>
             <div class="container">
                 <div class="row" id="products">
-                <!-- <div class="col-md-3 col-sm-6">
-                    <div class="single-shop-product">
-                        <div class="product-upper">
-                            <img src="img/product-2.jpg" alt="">
-                        </div>
-                        <h4 style="width: 10rem;"><a href="">Apple new mac book 2015 March :P</a></h2>
-                        <div class="product-carousel-price">
-                            <ins>$899.00</ins> <del>$999.00</del>
-                        </div>  
-                        
-                        <div class="product-option-shop">
-                            <a class=" btn btn-warning add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                        </div>                       
-                    </div>
-                </div> -->
-
-
-            </div>
-          </div>
-        </div>
-         
-             
-
+                    <!-- dynamic listing -->
                 </div>
             </div>
         </div>
+
+
+
+    </div>
+    <nav aria-label="...">
+        <ul class="pagination" id="paginaton">
+            <!-- <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li> -->
+        </ul>
+    </nav>
+    </div>
+
+    </div>
+
 
     </div>
 
@@ -103,6 +108,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="display.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
