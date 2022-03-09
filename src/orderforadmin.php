@@ -134,10 +134,11 @@ require_once('./classes/check.php');
             <thead>
               <tr>
                 <th scope="col">ID</th>
-                <th scope="col">udername</th>
-                <th scope="col">email</th>
-                <th scope="col">role</th>
-                <th scope="col">permission</th>
+                <th scope="col">product_id</th>
+                <th scope="col">product_name</th>
+                <th scope="col">price</th>
+                <th scope="col">quentity</th>
+                <th scope="col">status</th>
                 <th scope="col">action</th>
               </tr>
             </thead>
@@ -167,7 +168,7 @@ require_once('./classes/check.php');
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="dash.js"></script>
+  <script src="orderforadmin.js"></script>
 
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

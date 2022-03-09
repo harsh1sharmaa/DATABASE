@@ -23,7 +23,7 @@ $(document).ready(function () {
     });
 
 });
-
+ 
 
 
 $("#table").on("click", ".btn-secondary", function (e) {

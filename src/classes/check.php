@@ -1,23 +1,28 @@
 <?php
+
+// namespace app;
+
+// include "/src/vendor/autoload.php";
+
 require_once('DB.php');
 require_once('User.php');
 
 
 
-// $sql1="SELECT user_id,username,email,role,permission FROM user";
+
+// $sql = "SELECT permission FROM user WHERE email='harshharma'";
+// // $sql=`SELECT role FROM user WHERE email="harsh@sharma"`;
 // $conn = DB::getInstance();
 
-// $stmt = $conn->prepare($sql1);
+// $stmt = $conn->prepare($sql);
 // $stmt->execute();
 // $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 // $ans = $stmt->fetchAll();
-//   echo"<pre>";
-// //   $id1=$ans[0]['user_id'];
-// print_r($ans);
-// foreach($ans as $k=>$val){
-//     echo $val['user_id'];
-// }
-//   echo $id1;
+// echo "<pre>";
+
+// echo $ans[0]['permission'];
+
+// die();
 
 
 class Check extends User
@@ -28,10 +33,10 @@ class Check extends User
     {
     }
 
-    public function addser($name, $pswrd, $mail,$role="customer",$permission="false")
+    public function addser($name, $pswrd, $mail, $role = "customer", $permission = "false")
     {
 
-        $user = new User($name, $pswrd, $mail,$role,$permission);
+        $user = new User($name, $pswrd, $mail, $role, $permission);
         return  $user->addUser($user);
     }
 
@@ -75,18 +80,18 @@ class Check extends User
         $ans = $stmt->fetchAll();
         //   echo"<pre>";
         $id2 = $ans[0]['user_id'];
-         //////////********************* */
-         $sql1 = "SELECT permission FROM user WHERE email='$email'";
-         $conn = DB::getInstance();
- 
-         $stmt = $conn->prepare($sql1);
-         $stmt->execute();
-         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-         $ans = $stmt->fetchAll();
-         //   echo"<pre>";
-         $permission = $ans[0]['permission'];
+        //////////********************* */
+        $sql1 = "SELECT permission FROM user WHERE email='$email'";
+        $conn = DB::getInstance();
 
-        if (($id1 == $id2)&&($permission=='true')) {
+        $stmt = $conn->prepare($sql1);
+        $stmt->execute();
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $ans = $stmt->fetchAll();
+        //   echo"<pre>";
+        $permission = $ans[0]['permission'];
+
+        if (($id1 == $id2) && ($permission == 'true')) {
             return 1;
         } else {
             return 0;
@@ -127,8 +132,31 @@ class Check extends User
         $conn = DB::getInstance();
         $sql = "UPDATE user SET permission='$permison' WHERE user_id='$id'";
 
-        
+
         $conn->exec($sql);
+    }
+
+
+    public function checkLoginOrNot($email)
+    {
+
+
+
+        $sql = "SELECT permission FROM user WHERE email='$email'";
+        // $sql=`SELECT role FROM user WHERE email="harsh@sharma"`;
+        $conn = DB::getInstance();
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $ans = $stmt->fetchAll();
+        //   echo"<pre>";
+
+        if ($ans[0]['permission'] == 'true') {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     // function AddUserByAdmin($name,$mail,$pswrd,$role,$permison){

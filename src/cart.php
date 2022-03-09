@@ -101,9 +101,10 @@
         <div class="col-3">
             <form>
                     <!-- <button type="submit" class="btn btn-primary">Checkout</button> -->
-                    <a class="btn btn-primary" href="./checkout.php">Checkout</a>
+                    <a class="btn btn-primary" href="./controlr.php?action=checkout">Checkout</a>
             </form>
         </div>
+        <a class="btn btn-primary" href="./controlr.php?action=logout">logOut</a>
     </div>
   </main>
 
