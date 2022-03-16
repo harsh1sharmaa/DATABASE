@@ -1,4 +1,14 @@
 <?php
+
+// namespace app;
+
+// use PDO;
+// use PDOException;
+
+// require_once("../vendor/autoload.php");
+
+
+
 include_once('DB.php');
 class Product extends DB
 {
@@ -16,8 +26,6 @@ class Product extends DB
    */
   public function getAllProducts()
   {
-
-
     $sql1 = "SELECT * FROM Products";
     $conn = DB::getInstance();
 
@@ -32,14 +40,12 @@ class Product extends DB
   }
 
 
-
   public function addProduct($id, $name, $price, $category, $status)
   {
     try {
-
       $conn = DB::getInstance();
       $sql = "INSERT INTO Products (product_id, product_name, product_price,category,status)
-    VALUES ('$id', '$name', '$price','$category','$status')";
+         VALUES ('$id', '$name', '$price','$category','$status')";
       // use exec() because no results are returned
       $conn->exec($sql);
       return;

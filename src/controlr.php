@@ -1,14 +1,18 @@
 <?php
 // include ("autoload.php");
 
+// use app\Check;
+// use app\Order;
+// use app\Product;
+
 session_start();
-require_once('./classes/check.php');
+// require_once('./classes/check.php');
 include_once('./classes/check.php');
 include_once('./classes/DB.php');
 include_once('./classes/User.php');
 include_once('./classes/order.php');
 include_once('./classes/productclass.php');
-
+//  require_once("./vendor/autoload.php");
 
 // echo "<pre>";
 // print_r($_SESSION);
@@ -157,17 +161,13 @@ switch ($_REQUEST['action']) {
             $email = $_SESSION['user'];
             $cnfrm = placeOrder($email);
             if ($cnfrm == 1) {
-
                 unset($_SESSION['AddToCart']);
                 header("Location:./orderPlaced.php");
             } else {
-
                 echo "order Not Placed";
                 die();
             }
         } else {
-
-
             // header("Location:./login.php");
             header("Location:./checkout.php");
         }
@@ -195,15 +195,12 @@ switch ($_REQUEST['action']) {
             //place Order in Tabl
             $cnfrm = placeOrder($email);
             if ($cnfrm == 1) {
-
                 unset($_SESSION['AddToCart']);
                 header("Location:./orderPlaced.php");
-            } else if ($check != 1) {
-
+            } elseif ($check != 1) {
                 echo "order Not Placed";
                 die();
             } else {
-
                 header("Location:./login.php");
             }
         } else {
@@ -226,10 +223,12 @@ if ($_POST['reg'] == 'regis') {
     $uname = $_POST['username'];
     $upswrd = $_POST['paswrd'];
     $umail = $_POST['email'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
 
-    $check->addser($uname, $upswrd, $umail);
+    $check->addser($fname, $lname, $uname, $upswrd, $umail);
     header("Location:./waitForAprovel.php");
-} else if ($_POST['paswrd'] != '' && $_POST['email'] != '') {
+} elseif ($_POST['paswrd'] != '' && $_POST['email'] != '') {
     // echo "in if";
 
     $check = new Check();
@@ -243,7 +242,6 @@ if ($_POST['reg'] == 'regis') {
         // echo "invalid user";
         header("Location:./warnig.php");
     } else {
-
         $role = $check->checkRoleOfUser($mail);
         //      echo $role;
         if ($role == 'admin') {
@@ -251,7 +249,6 @@ if ($_POST['reg'] == 'regis') {
             $_SESSION['admin'] = 'login';
             header("Location:./dashboard.php");
         } else {
-
             // if (isset($_SESSION['user'])) {
 
             //     header("Location:./checkout.php");
@@ -271,7 +268,6 @@ function updateQuentity($id, $qnty)
 {
 
     foreach ($_SESSION['AddToCart'] as $key => $val) {
-
         if ($val['id'] == $id) {
             $_SESSION["AddToCart"][$key]['quantity'] = $qnty;
             // echo $val
@@ -281,9 +277,7 @@ function updateQuentity($id, $qnty)
 }
 function removeFromCart($id)
 {
-
     foreach ($_SESSION['AddToCart'] as $key => $val) {
-
         if ($val['id'] == $id) {
             //    $_SESSION["AddToCart"][$key]['quantity']=$qnty;
             //     // echo $val
@@ -297,10 +291,7 @@ function removeFromCart($id)
 function placeOrder($email)
 {
     $ans = 1;
-
-
     foreach ($_SESSION['AddToCart'] as $key => $val) {
-
         $id = $val['id'];
         $name = $val['name'];
         $price = $val['price'];

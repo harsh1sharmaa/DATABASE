@@ -1,4 +1,16 @@
 <?php
+
+// namespace app;
+
+// use PDO;
+
+// use PDOException;
+
+// require_once("../vendor/autoload.php");
+
+// use app\DB;
+
+
 include_once('DB.php');
 
 class Order extends DB
@@ -21,6 +33,7 @@ class Order extends DB
 
         $this->quantity = $quantity;
     }
+    
 
     public function PlaceOrder($order)
     {
@@ -33,8 +46,6 @@ class Order extends DB
 
 
         try {
-
-
             $conn = DB::getInstance();
             $sql = "INSERT INTO Orders ( product_id, product_name,product_price,quantity,email)
         VALUES ('$id', '$name', '$price','$quantity','$email')";

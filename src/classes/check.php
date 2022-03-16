@@ -2,10 +2,14 @@
 
 // namespace app;
 
-// include "/src/vendor/autoload.php";
+// use PDO;
+
+// require_once("../vendor/autoload.php");
+
 
 require_once('DB.php');
 require_once('User.php');
+
 
 
 
@@ -33,10 +37,10 @@ class Check extends User
     {
     }
 
-    public function addser($name, $pswrd, $mail, $role = "customer", $permission = "false")
+    public function addser($fname, $lname, $name, $pswrd, $mail, $role = "customer", $permission = "false")
     {
 
-        $user = new User($name, $pswrd, $mail, $role, $permission);
+        $user = new User($fname, $lname, $name, $pswrd, $mail, $role, $permission);
         return  $user->addUser($user);
     }
 

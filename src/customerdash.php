@@ -1,4 +1,9 @@
+<?php
 
+session_start();
+print_r($_SESSION['user']);
+// die();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -56,6 +61,7 @@
     </div>
   </div>
 </header>
+<input type="text" id="loginuser" value="<?php echo $_SESSION['user'];  ?>"  >
 
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
@@ -68,17 +74,18 @@
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">firstName</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">lastname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                    <div class="col-md-6"><label class="labels">firstName</label><input type="text" id="fname" class="form-control" placeholder="first name" value=""></div>
+                    <div class="col-md-6"><label class="labels">lastname</label><input type="text" id="lname" class="form-control" value="" placeholder="surname"></div>
                 </div>
                 <div class="row mt-3">
                     <!-- <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div> -->
-                    <div class="col-md-12"><label class="labels">Address Line </label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                    <div class="col-md-12"><label class="labels">Username </label><input type="text" id="uname" class="form-control" placeholder="enter address line 1" value="" disabled></div>
+                    <div class="col-md-12"><label class="labels">Address Line </label><input type="text" id="address" class="form-control" placeholder="enter address line 1" value=""></div>
                     <!-- <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
                     <!-- <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
                     <!-- <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
                     <!-- <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
-                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" id="email" class="form-control" placeholder="enter email id" value="" disabled></div>
                     <!-- <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div> -->
                 </div>
                 <div class="row mt-3">
@@ -102,6 +109,8 @@
 </div>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="userdash.js"></script>
 
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>

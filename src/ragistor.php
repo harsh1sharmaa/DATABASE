@@ -48,6 +48,14 @@ session_start();
             <h1 class="h3 mb-3 fw-normal">Ragistor</h1>
 
             <div class="form-floating">
+                <input type="text" name="fname" class="form-control" id="fname" placeholder="first name">
+                <label for="floatingInput">first name</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" name="lname" class="form-control" id="lname" placeholder="last name">
+                <label for="floatingInput">last name</label>
+            </div>
+            <div class="form-floating">
                 <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">username</label>
             </div>

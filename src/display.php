@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!doctype html>
 <html lang="en">
 
@@ -38,6 +34,16 @@
                 font-size: 3.5rem;
             }
         }
+
+        .card {
+            min-height: 200px;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 15vw;
+            object-fit: cover;
+        }
     </style>
 
 
@@ -49,9 +55,52 @@
 
     <div class="container">
 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                sort
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li> <i class="fa-solid fa-sort-up m-4 " id="incre"></i>
 
-        <ul class="nav justify-content-center" id="filter">
-           
+
+
+                                </li>
+                                <li><i class="fa-solid fa-sort-down m-4" id="decre"></i></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-danger" href="./cart.php" tabindex="-1" aria-disabled="true">Go To Cart</a>
+                        </li>
+                    </ul>
+
+
+                    <input class="form-control me-2 w-25 p-3" type="search" placeholder="Search" aria-label="Search" type="text" id="option">
+                    <button class="btn btn-outline-success" id="filter" onclick="filter()">search</button>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+        <!-- <ul class="nav justify-content-center" id="filter">
+
             <li class="nav-item">
                 <a class="nav-link" href="#">phone</a>
             </li>
@@ -65,6 +114,21 @@
         <label class="btn btn-primary">Category</label>
         <input type="text" id="option">
         <button id="filter" onclick="filter()">search</button>
+
+        <i class="fa-solid fa-sort-up m-4 " id="incre"></i>
+
+
+        <i class="fa-solid fa-sort-down" id="decre"></i> -->
+
+
+
+        <div>
+            <!-- <nav aria-label="..."> -->
+            <ul class="pagination" id="paginaton">
+
+            </ul>
+            <!-- </nav> -->
+        </div>
 
 
 
@@ -80,28 +144,10 @@
 
 
 
-    </div>
-    <nav aria-label="...">
-        <ul class="pagination" id="paginaton">
-            <!-- <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active" aria-current="page">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li> -->
-        </ul>
-    </nav>
-    </div>
-
-    </div>
 
 
     </div>
+
 
 
 

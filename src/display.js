@@ -22,6 +22,23 @@ $(document).ready(function () {
 });
 let gData;
 
+$("#decre").click(function () {
+
+  console.log("hello");
+
+  gData.sort((a, b) =>( b.price - a.price));
+  console.log(gData);
+  displayAllProducts(gData, '', 1);
+})
+$("#incre").click(function () {
+
+  console.log("hello");
+
+  gData.sort((a, b) =>( a.price - b.price));
+  // console.log(gData);
+  displayAllProducts(gData, '', 1);
+})
+
 
 function filter() {
 
@@ -112,9 +129,9 @@ function displayAllProducts(data, option, pageno) {
 
     if (obj.category == option || option == '') {
 
-      str += '<div class="col col-md-3 col-sm-6 m-4">\
-            <div class="card" style="width: 18rem;">\
-              <img src="img/'+ obj.img + '" class="img-fluid" alt="...">\
+      str += '<div class="col col-md-3 col-sm-6 m-2">\
+            <div class="card" style="width:10rem; height:10rem">\
+              <img src="./ustora/img/'+ obj.img + '" class="img-fluid card-img-top" alt="...">\
               <div class="each-movie">\
                 <p class="card-text"></p>\
                 <h4 style="width: 10rem;"><a id="details" href="detail.php?id='+ obj.Id + '"?  data-pid=' + obj.Id + '">' + obj.name + ':P</a></h4>\
