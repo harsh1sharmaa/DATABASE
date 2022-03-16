@@ -46,7 +46,7 @@ function displaydetails(data){
 
 let str=' <div class=" row  mt-5">\
 <div class="col col-sm-12 col-md-6">\
-    <img src="img/'+obj.img+'" alt="..." class="img-thumbnail">\
+    <img src="./ustora/img/'+obj.img+'" alt="..." class="img-thumbnail">\
 </div> <div class=" col col-sm-12 col-md-6 p-5 ">\
 <h1 class="float-left">category => '+obj.category+'</h1>\
 <h1 class="float-left">Name => '+obj.name+'</h1>\
@@ -74,7 +74,7 @@ let str=' <div class=" row  mt-5">\
         <h1><i class="fa-solid fa-circle-down m-4"></i></h1>\
     </div>\
     <div>\
-        <button> type="button" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i>add To\
+        <button type=button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i>add To\
             Cart</button>\
     </div>\
 </div>\

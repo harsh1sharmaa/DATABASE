@@ -1,12 +1,12 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin'])) {
-  header("Location:./login.php");
-}
-require_once('./classes/check.php');
+// if (!isset($_SESSION['admin'])) {
+//   header("Location:./login.php");
+// }
+// require_once('./classes/check.php');
 
 
-?>
+// ?>
 <!doctype html>
 <html lang="en">
 

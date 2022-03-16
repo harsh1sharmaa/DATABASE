@@ -1,5 +1,11 @@
 <?php
-// include('../config.php');
+// namespace app;
+
+// use PDO;
+// use PDOException;
+
+// require_once("../vendor/autoload.php");
+
 class DB
 {
     public static $instance;
